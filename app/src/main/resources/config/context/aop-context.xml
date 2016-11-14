@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd">
+    
+	<!-- AOP setting for Logging -->
+    <beans:bean id="logAspect" class="com.prj.api.common.aop.LoggingAspect"></beans:bean>
+
+	<!-- AOP setting for Logging Before method call  -->		
+	<aop:config>
+		<aop:aspect id="aspectLoggging" ref="logAspect">
+			<aop:pointcut id="pointCutSet" expression="execution(* com.prj.api..*.service..*(..))" />
+			<aop:before method="logBefore" pointcut-ref="pointCutSet" />
+		</aop:aspect>
+	</aop:config>
+	
+</beans:beans>

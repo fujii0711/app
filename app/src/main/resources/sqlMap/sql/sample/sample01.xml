@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.prj.api.sample.dao.Sample01DAO">
+
+	<!-- <select id="sample01" resultType="map">
+		<![CDATA[
+			SELECT 
+			    COUNTRY_ID
+			   ,COUNTRY_NAME
+			   ,REGION_ID 
+			FROM COUNTRIES
+		]]>
+	</select> -->
+	
+	<select id="sample01" resultType="map">
+		<![CDATA[
+			SELECT data01,data05 FROM sample_list
+		]]>
+	</select>
+</mapper>

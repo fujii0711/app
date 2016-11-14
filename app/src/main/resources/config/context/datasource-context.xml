@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/tx 
+    http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->	
+	<bean name="dbcp" class="org.apache.commons.dbcp.BasicDataSource">
+   		<property name="driverClassName" value="${jdbc.driverClassName}"></property>
+		<property name="url" value="${jdbc.url}"></property>
+		<property name="username" value="${jdbc.username}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+		<property name="maxActive" value="20"></property>
+		<property name="maxIdle" value="5"></property>
+		<property name="maxWait" value="20000"></property>
+	</bean>
+
+	<!-- <tx:annotation-driven /> -->
+    
+    <!-- Transaction setting [spring-jdbc] -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="log4jDataSource" />
+	</bean>
+	
+    <!-- myBatis Setting [mybatis-spring] -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	   	<property name="dataSource" ref="log4jDataSource"></property>
+	   	<property name="mapperLocations" value="classpath:sqlMap/sql/**/**/*.xml"></property>	
+	   	<property name="configLocation" value="classpath:sqlMap/config/mybatis-config.xml"></property>	   
+    </bean>
+    
+    <!-- [mybatis] -->
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+
+    <!-- myBatis logging [log4jdbc-remix] -->
+	<bean id="log4jDataSource" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
+        <constructor-arg ref="dbcp"></constructor-arg>	 
+        <property name="logFormatter">
+            <bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
+                <property name="loggingType" value="MULTI_LINE" ></property>	
+                <property name="sqlPrefix" value="########## SQL #########:  "></property>	
+            </bean>
+        </property>
+    </bean>
+    
+	<!-- Using properties file setting -->
+	<context:property-placeholder location="classpath:config/properties/jdbc.properties" />
+	
+	<bean id="configProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	    <property name="locations">
+			<list>
+				<value>classpath:config/properties/jdbc.properties</value>
+			</list>
+	    </property>
+    </bean>
+</beans>
+
