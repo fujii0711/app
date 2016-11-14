@@ -10,7 +10,7 @@ public class LoggingAspect {
 	private static final Logger logger = LoggerFactory.getLogger(LoggingAspect.class);
 	
 	public void logBefore(JoinPoint joinPoint) {
-		logger.info("################################################################ LOGGING START ############################################################################");
+		logger.info("############################################################### LOGGING START ############################################################################");
 		Signature signature = joinPoint.getSignature();
 		Object target = joinPoint.getTarget();
 		Object[] args = joinPoint.getArgs();
@@ -22,6 +22,6 @@ public class LoggingAspect {
 		for(int i=0; i < args.length; i++){
 			logger.info("[4.Input Parameter]_" + i + ": " + args[i].toString());
 		}
-		logger.info("################################################################# LOGGING END #############################################################################");
+		logger.info("################################################################ LOGGING END #############################################################################");
 	}
 }

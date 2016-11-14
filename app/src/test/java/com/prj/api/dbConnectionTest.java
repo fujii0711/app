@@ -18,6 +18,7 @@ public class dbConnectionTest {
 	@Autowired
 	DataSource dataSource;
 	
+	
 	@Test
 	public void dbConnection() throws Exception{		
 		Connection con = dataSource.getConnection();
