@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>기본 레이아웃</title>
+<meta name="Publisher" content="cdc" />
+<meta name="Keywords"  content="cdc" />
+<meta name="Description" content="cdc" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<meta name="format-detection" content="telephone=no" />
+
+<!-- css -->
+<link  href="css/common.css" rel="stylesheet" type="text/css" />
+<link  href="css/layout.css" rel="stylesheet" type="text/css" />
+<link  href="css/jquery.bxslider.css" rel="stylesheet" type="text/css" />
+<!-- js -->
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery.bxslider.js" ></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.bxslider').bxSlider({
+	  infiniteLoop: false,
+	  hideControlOnEnd: true,
+	  adaptiveHeight: true
+	});
+
+	$("p.openGnb").click(function(){
+		$("p.backBg").fadeIn("slow");
+		$(this).next(".gnbArea").animate({
+				'left':'0px',
+		});
+
+	});
+	$("p.closeGnb").click(function(){
+		$(this).parents(".gnbArea").animate({
+				'left':'-300px',
+		});
+		$("p.backBg").fadeOut("slow");
+	});
+});
+</script>
+<style>
+
+</style>
+</head>
+<body>
+
+	<div id="wrap">
+		<!-- headerArea -->
+		<div id="headerArea">
+			<div class="headerTop">
+				<h1>HEMS 관리시스템</h1>
+			</div>
+			<p class="openGnb"><a href="#none"><img src="images/btn_openMenu.gif"  alt="메뉴오픈"></a></p>
+			<div class="gnbArea">
+				<div id="" class="gnbHeader">
+					<h2>홍길동</h2>
+					<p class="closeGnb"><a href="#none"><img src="images/bnt_close.png"  border="0" alt="메뉴닫기"></a></p>
+				</div>
+
+				<div id="" class="sample01">
+					<a href="main.html"><img src="images/sample01_01.jpg" alt=""></a>
+					<img src="images/sample01_02.jpg" alt="">
+				</div>
+				<ul class="gnb">
+					<li><a href="">MENU1</a></li>
+					<li><a href="">MENU2</a></li>
+					<li><a href="">MENU3</a></li>
+					<li><a href="">MENU4</a></li>
+					<li><a href="">MENU5</a></li>
+					<li><a href="">MENU6</a></li>
+				</ul>
+			</div>
+			<p class="btnSet"><a href="#none"><img src="images/bnt_set.png"  alt="메뉴오픈"></a></p>
+			<p class="backBg"></p>
+			<!-- //gnbArea -->
+		</div>
+		<!-- End headerArea -->
+
+		<!-- container -->
+		<div id="container">
+			<div class="contents">
+				<div class="groupA">
+					<div class="bxCustom">
+						<ul class="bxslider ">
+						  <li><img src="images/img03.jpg" /></li>
+						  <li><img src="images/img04.jpg" /></li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- End container -->
+
+		<!-- footerArea -->
+		<div id="footerArea">
+			<div class="footer">하단정보</div>
+		</div>
+		<!-- End footerArea -->
+	</div>
+
+
+</body>
+</html>

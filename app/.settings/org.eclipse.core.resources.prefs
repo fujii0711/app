@@ -2,5 +2,6 @@ eclipse.preferences.version=1
 encoding//src/main/java/com/prj/api/common/util/convertCollection.java=UTF-8
 encoding//src/main/webapp/WEB-INF/views/exception/message.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/exception/result.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/html/main.html=UTF-8
 encoding//src/main/webapp/WEB-INF/views/login/loginCheck.jsp=UTF-8
 encoding/<project>=UTF-8

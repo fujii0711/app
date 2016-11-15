@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.prj.api.sample.dao.Sample02DAO">
+	<select id="sample02" resultType="map">
+		<![CDATA[
+			SELECT 
+				 '15' data01
+				,'25' data02
+			    ,'30' data03 
+			    ,'15' data04 
+			    ,'10' data05 
+			    ,'5' data06 
+			FROM dual
+		]]>
+	</select>
+</mapper>

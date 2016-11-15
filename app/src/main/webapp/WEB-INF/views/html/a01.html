@@ -1,0 +1,1091 @@
+<?php include_once $_SERVER["DOCUMENT_ROOT"]."/hems/include/header.php" ; ?>
+<script type="text/javascript">
+$(function () {
+
+	// Create the chart
+    $('#tabChartA').highcharts({
+        chart: {
+			backgroundColor: 'none',
+            type: 'column'
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            type: 'category'
+        },
+        yAxis: {
+
+            title: {
+                text: ''
+            }
+
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            series: {
+                borderWidth: 0,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.y:.1f}%'
+                }
+            }
+        },
+
+        tooltip: {
+            headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+        },
+
+        series: [{
+            name: 'Brands',
+            colorByPoint: true,
+            data: [{
+                name: '전기밥솥',
+                y: 56.33,
+                drilldown: '전기밥솥'
+            }, {
+                name: '세탁기',
+				color: '#f54',
+                y: 24.03,
+                drilldown: '세탁기'
+            }, {
+                name: '냉장고',
+                y: 10.38,
+                drilldown: '냉장고'
+            }, {
+                name: '상시전기',
+                y: 4.77,
+                drilldown: '상시전기'
+            }, {
+                name: 'TV',
+                y: 0.91,
+                drilldown: 'TV'
+            }, {
+                name: '충전기',
+                y: 0.2,
+                drilldown: null
+            }]
+        }],
+        drilldown: {
+            series: [{
+                name: '전기밥솥',
+                id: '전기밥솥',
+                data: [
+                    [
+                        'v11.0',
+                        24.13
+                    ],
+                    [
+                        'v8.0',
+                        17.2
+                    ],
+                    [
+                        'v9.0',
+                        8.11
+                    ],
+                    [
+                        'v10.0',
+                        5.33
+                    ],
+                    [
+                        'v6.0',
+                        1.06
+                    ],
+                    [
+                        'v7.0',
+                        0.5
+                    ]
+                ]
+            }, {
+                name: '세탁기',
+                id: '세탁기',
+                data: [
+                    [
+                        'v40.0',
+                        5
+                    ],
+                    [
+                        'v41.0',
+                        4.32
+                    ],
+                    [
+                        'v42.0',
+                        3.68
+                    ],
+                    [
+                        'v39.0',
+                        2.96
+                    ],
+                    [
+                        'v36.0',
+                        2.53
+                    ],
+                    [
+                        'v43.0',
+                        1.45
+                    ],
+                    [
+                        'v31.0',
+                        1.24
+                    ],
+                    [
+                        'v35.0',
+                        0.85
+                    ],
+                    [
+                        'v38.0',
+                        0.6
+                    ],
+                    [
+                        'v32.0',
+                        0.55
+                    ],
+                    [
+                        'v37.0',
+                        0.38
+                    ],
+                    [
+                        'v33.0',
+                        0.19
+                    ],
+                    [
+                        'v34.0',
+                        0.14
+                    ],
+                    [
+                        'v30.0',
+                        0.14
+                    ]
+                ]
+            }, {
+                name: '냉장고',
+                id: '냉장고',
+                data: [
+                    [
+                        'v35',
+                        2.76
+                    ],
+                    [
+                        'v36',
+                        2.32
+                    ],
+                    [
+                        'v37',
+                        2.31
+                    ],
+                    [
+                        'v34',
+                        1.27
+                    ],
+                    [
+                        'v38',
+                        1.02
+                    ],
+                    [
+                        'v31',
+                        0.33
+                    ],
+                    [
+                        'v33',
+                        0.22
+                    ],
+                    [
+                        'v32',
+                        0.15
+                    ]
+                ]
+            }, {
+                name: '상시전기',
+                id: '상시전기',
+                data: [
+                    [
+                        'v8.0',
+                        2.56
+                    ],
+                    [
+                        'v7.1',
+                        0.77
+                    ],
+                    [
+                        'v5.1',
+                        0.42
+                    ],
+                    [
+                        'v5.0',
+                        0.3
+                    ],
+                    [
+                        'v6.1',
+                        0.29
+                    ],
+                    [
+                        'v7.0',
+                        0.26
+                    ],
+                    [
+                        'v6.2',
+                        0.17
+                    ]
+                ]
+            }, {
+                name: 'TV',
+                id: 'TV',
+                data: [
+                    [
+                        'v12.x',
+                        0.34
+                    ],
+                    [
+                        'v28',
+                        0.24
+                    ],
+                    [
+                        'v27',
+                        0.17
+                    ],
+                    [
+                        'v29',
+                        0.16
+                    ]
+                ]
+            }]
+        }
+    });
+
+	// Create the chart
+    $('#chartB').highcharts({
+        chart: {
+			backgroundColor: 'none',
+            type: 'column'
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+			className: 'highcharts-color-0',
+            type: 'category'
+        },
+        yAxis: {
+			className: 'highcharts-color-1',
+            title: {
+                text: ''
+            }
+
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            series: {
+                borderWidth: 0,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.y:.1f}%'
+                }
+            }
+        },
+
+        tooltip: {
+            headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+        },
+
+        series: [{
+            name: 'Brands',
+            colorByPoint: true,
+            data: [{
+                name: '전기밥솥',
+                y: 56.33,
+                drilldown: '전기밥솥'
+            }, {
+                name: '세탁기',
+				color: '#f54',
+                y: 24.03,
+                drilldown: '세탁기'
+            }, {
+                name: '냉장고',
+                y: 10.38,
+                drilldown: '냉장고'
+            }, {
+                name: '상시전기',
+                y: 4.77,
+                drilldown: '상시전기'
+            }, {
+                name: 'TV',
+                y: 0.91,
+                drilldown: 'TV'
+            }, {
+                name: '충전기',
+                y: 0.2,
+                drilldown: null
+            }]
+        }],
+        drilldown: {
+            series: [{
+                name: '전기밥솥',
+                id: '전기밥솥',
+                data: [
+                    [
+                        'v11.0',
+                        24.13
+                    ],
+                    [
+                        'v8.0',
+                        17.2
+                    ],
+                    [
+                        'v9.0',
+                        8.11
+                    ],
+                    [
+                        'v10.0',
+                        5.33
+                    ],
+                    [
+                        'v6.0',
+                        1.06
+                    ],
+                    [
+                        'v7.0',
+                        0.5
+                    ]
+                ]
+            }, {
+                name: '세탁기',
+                id: '세탁기',
+                data: [
+                    [
+                        'v40.0',
+                        5
+                    ],
+                    [
+                        'v41.0',
+                        4.32
+                    ],
+                    [
+                        'v42.0',
+                        3.68
+                    ],
+                    [
+                        'v39.0',
+                        2.96
+                    ],
+                    [
+                        'v36.0',
+                        2.53
+                    ],
+                    [
+                        'v43.0',
+                        1.45
+                    ],
+                    [
+                        'v31.0',
+                        1.24
+                    ],
+                    [
+                        'v35.0',
+                        0.85
+                    ],
+                    [
+                        'v38.0',
+                        0.6
+                    ],
+                    [
+                        'v32.0',
+                        0.55
+                    ],
+                    [
+                        'v37.0',
+                        0.38
+                    ],
+                    [
+                        'v33.0',
+                        0.19
+                    ],
+                    [
+                        'v34.0',
+                        0.14
+                    ],
+                    [
+                        'v30.0',
+                        0.14
+                    ]
+                ]
+            }, {
+                name: '냉장고',
+                id: '냉장고',
+                data: [
+                    [
+                        'v35',
+                        2.76
+                    ],
+                    [
+                        'v36',
+                        2.32
+                    ],
+                    [
+                        'v37',
+                        2.31
+                    ],
+                    [
+                        'v34',
+                        1.27
+                    ],
+                    [
+                        'v38',
+                        1.02
+                    ],
+                    [
+                        'v31',
+                        0.33
+                    ],
+                    [
+                        'v33',
+                        0.22
+                    ],
+                    [
+                        'v32',
+                        0.15
+                    ]
+                ]
+            }, {
+                name: '상시전기',
+                id: '상시전기',
+                data: [
+                    [
+                        'v8.0',
+                        2.56
+                    ],
+                    [
+                        'v7.1',
+                        0.77
+                    ],
+                    [
+                        'v5.1',
+                        0.42
+                    ],
+                    [
+                        'v5.0',
+                        0.3
+                    ],
+                    [
+                        'v6.1',
+                        0.29
+                    ],
+                    [
+                        'v7.0',
+                        0.26
+                    ],
+                    [
+                        'v6.2',
+                        0.17
+                    ]
+                ]
+            }, {
+                name: 'TV',
+                id: 'TV',
+                data: [
+                    [
+                        'v12.x',
+                        0.34
+                    ],
+                    [
+                        'v28',
+                        0.24
+                    ],
+                    [
+                        'v27',
+                        0.17
+                    ],
+                    [
+                        'v29',
+                        0.16
+                    ]
+                ]
+            }]
+        }
+    });
+
+	//
+	$('#chartC').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            type: 'category',
+            labels: {
+                rotation: -45,
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: ' '
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: 'Population in 2008: <b>{point.y:.1f} millions</b>'
+        },
+        series: [{
+            name: 'Population',
+            data: [
+                ['Shanghai', 23.7],
+                ['Lagos', 16.1],
+                ['Istanbul', 14.2],
+                ['Karachi', 14.0],
+                ['Mumbai', 12.5],
+                ['Moscow', 12.1],
+                ['São Paulo', 11.8],
+                ['Beijing', 11.7],
+                ['Guangzhou', 11.1],
+                ['Delhi', 11.1],
+                ['Shenzhen', 10.5],
+                ['Seoul', 10.4],
+                ['Jakarta', 10.0],
+                ['Kinshasa', 9.3],
+                ['Tianjin', 9.3],
+                ['Tokyo', 9.0],
+                ['Cairo', 8.9],
+                ['Dhaka', 8.9],
+                ['Mexico City', 8.9],
+                ['Lima', 8.9]
+            ],
+            dataLabels: {
+                enabled: true,
+                rotation: -90,
+                color: '#FFFFFF',
+                align: 'right',
+                format: '{point.y:.1f}', // one decimal
+                y: 10, // 10 pixels down from the top
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        }]
+    });
+
+	// Create the chart
+    $('#chartD').highcharts({
+        chart: {
+			backgroundColor: 'none',
+            type: 'column'
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+			className: 'highcharts-color-0',
+            type: 'category'
+        },
+        yAxis: {
+			className: 'highcharts-color-1',
+            title: {
+                text: ''
+            }
+
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            series: {
+                borderWidth: 0,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.y:.1f}%'
+                }
+            }
+        },
+
+        tooltip: {
+            headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+        },
+
+        series: [{
+            name: 'Brands',
+            colorByPoint: true,
+            data: [{
+                name: '전기밥솥',
+                y: 56.33,
+                drilldown: '전기밥솥'
+            }, {
+                name: '세탁기',
+				color: '#f54',
+                y: 24.03,
+                drilldown: '세탁기'
+            }, {
+                name: '냉장고',
+                y: 10.38,
+                drilldown: '냉장고'
+            }, {
+                name: '상시전기',
+                y: 4.77,
+                drilldown: '상시전기'
+            }, {
+                name: 'TV',
+                y: 0.91,
+                drilldown: 'TV'
+            }, {
+                name: '충전기',
+                y: 0.2,
+                drilldown: null
+            }]
+        }],
+        drilldown: {
+            series: [{
+                name: '전기밥솥',
+                id: '전기밥솥',
+                data: [
+                    [
+                        'v11.0',
+                        24.13
+                    ],
+                    [
+                        'v8.0',
+                        17.2
+                    ],
+                    [
+                        'v9.0',
+                        8.11
+                    ],
+                    [
+                        'v10.0',
+                        5.33
+                    ],
+                    [
+                        'v6.0',
+                        1.06
+                    ],
+                    [
+                        'v7.0',
+                        0.5
+                    ]
+                ]
+            }, {
+                name: '세탁기',
+                id: '세탁기',
+                data: [
+                    [
+                        'v40.0',
+                        5
+                    ],
+                    [
+                        'v41.0',
+                        4.32
+                    ],
+                    [
+                        'v42.0',
+                        3.68
+                    ],
+                    [
+                        'v39.0',
+                        2.96
+                    ],
+                    [
+                        'v36.0',
+                        2.53
+                    ],
+                    [
+                        'v43.0',
+                        1.45
+                    ],
+                    [
+                        'v31.0',
+                        1.24
+                    ],
+                    [
+                        'v35.0',
+                        0.85
+                    ],
+                    [
+                        'v38.0',
+                        0.6
+                    ],
+                    [
+                        'v32.0',
+                        0.55
+                    ],
+                    [
+                        'v37.0',
+                        0.38
+                    ],
+                    [
+                        'v33.0',
+                        0.19
+                    ],
+                    [
+                        'v34.0',
+                        0.14
+                    ],
+                    [
+                        'v30.0',
+                        0.14
+                    ]
+                ]
+            }, {
+                name: '냉장고',
+                id: '냉장고',
+                data: [
+                    [
+                        'v35',
+                        2.76
+                    ],
+                    [
+                        'v36',
+                        2.32
+                    ],
+                    [
+                        'v37',
+                        2.31
+                    ],
+                    [
+                        'v34',
+                        1.27
+                    ],
+                    [
+                        'v38',
+                        1.02
+                    ],
+                    [
+                        'v31',
+                        0.33
+                    ],
+                    [
+                        'v33',
+                        0.22
+                    ],
+                    [
+                        'v32',
+                        0.15
+                    ]
+                ]
+            }, {
+                name: '상시전기',
+                id: '상시전기',
+                data: [
+                    [
+                        'v8.0',
+                        2.56
+                    ],
+                    [
+                        'v7.1',
+                        0.77
+                    ],
+                    [
+                        'v5.1',
+                        0.42
+                    ],
+                    [
+                        'v5.0',
+                        0.3
+                    ],
+                    [
+                        'v6.1',
+                        0.29
+                    ],
+                    [
+                        'v7.0',
+                        0.26
+                    ],
+                    [
+                        'v6.2',
+                        0.17
+                    ]
+                ]
+            }, {
+                name: 'TV',
+                id: 'TV',
+                data: [
+                    [
+                        'v12.x',
+                        0.34
+                    ],
+                    [
+                        'v28',
+                        0.24
+                    ],
+                    [
+                        'v27',
+                        0.17
+                    ],
+                    [
+                        'v29',
+                        0.16
+                    ]
+                ]
+            }]
+        }
+    });
+
+});
+</script>
+<style type="text/css">
+
+
+</style>
+		<div class="contents sub">
+		<!-- 컨텐츠영역 -->
+
+
+		<div class="topTxtBa">전력 현황</div>
+		<div class="tabArea">
+			<ul class="tabs">
+				<li rel="tab2">2016년 09월</li>
+				<li rel="tab1" class="active">2016년 10월</li>
+				<li rel="tab3">2016년 11월</li>
+			</ul>
+			<div class="tab_container">
+				<div id="tab2" class="tab_content">
+					a
+				</div>
+				<!-- #tab2 -->
+				<div id="tab1" class="tab_content" style="display:block;">
+
+					<div class="sectionArea">
+						<div class="chartArea">
+							<div id="tabChartA" style="width:100%; height:160px;"></div>
+						</div>
+					</div><!-- //sectionArea -->
+
+				</div>
+				<!-- #tab1 -->
+				<div id="tab3" class="tab_content">
+					3
+				</div>
+				<!-- #tab3 -->
+			</div>
+			<!-- tab_container -->
+		</div>
+		<!-- //tabArea -->
+
+		<div class="pageSlider">
+			<!-- Swiper -->
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+
+					<div class="swiper-slide">
+
+						<div class="sectionArea">
+							<div class="modelArea_A">
+								<div class="model">
+									<p class="round">현재<br>누진</p>
+									<div class="box">
+										<p class="shadow">2단계 25,010원</p>
+										<p>다음누진 6일 후 예상</p>
+									</div>
+								</div>
+								<div class="model bgTypeA">
+									<p class="round">금월<br>예상</p>
+									<div class="box">
+										<p class="shadow">32,010원</p>
+										<p>다음누진 6일 후 예상</p>
+									</div>
+								</div>
+							</div><!-- //modelArea_A -->
+						</div>
+						<!-- //sectionArea -->
+						<div class="sectionArea">
+							<table class="table">
+								<thead>
+								<tr>
+									<th>단계</th>
+									<th>사용량</th>
+									<th>세대주</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td>전기밥솥</td>
+									<td>0~50kwh</td>
+									<td>1,000,000</td>
+								</tr>
+								<tr>
+									<td>세탁기</td>
+									<td>50~150kwh</td>
+									<td>23,000,000</td>
+								</tr>
+								<tr class="fcolorA">
+									<td>전기밥솥</td>
+									<td>0~50kwh</td>
+									<td>1,000,000</td>
+								</tr>
+								<tr>
+									<td>세탁기</td>
+									<td>50~150kwh</td>
+									<td>23,000,000</td>
+								</tr>
+								<tr>
+									<td>세탁기</td>
+									<td>50~150kwh</td>
+									<td>23,000,000</td>
+								</tr>
+								</tbody>
+							</table><!-- //table -->
+						</div>
+						<!-- //sectionArea -->
+
+					</div>
+					<div class="swiper-slide">
+
+						<div class="sectionArea">
+							<div class="modelArea_B">
+								<div class="arrayArea ">
+									<p class="txt ">사용기간 : 2016.09.21 ~ 2016.10.20</p>
+									<p class="txt txtXL strong">[금월 사용 통계(이웃 사용 통계)]</p>
+								</div>
+								<!-- //arrayArea -->
+								<p class="lineCol"></p>
+								<div class="arrayArea">
+									<div class="left">
+										<p class="txt ">당월 사용량 : 300 kWh</p>
+										<p class="txt txtL strong">50,000원 (<span class="colorA"><em class="iconUp"></em>20%</span>)</p>
+									</div>
+									<div class="right">
+										<p class="txt ">전년 동월 사용량 : 250 kWh</p>
+										<p class="txt txtL strong">40,000원</p>
+									</div>
+								</div>
+								<!-- //arrayArea -->
+							</div>
+							<!-- //modelArea_B -->
+						</div>
+						<!-- //sectionArea -->
+						<div class="sectionArea">
+							<table class="table">
+								<thead>
+								<tr>
+									<th>단계</th>
+									<th>사용량</th>
+									<th>세대주</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td>전기밥솥</td>
+									<td>0~50kwh</td>
+									<td>1,000,000</td>
+								</tr>
+								<tr class="bgB">
+									<td>세탁기</td>
+									<td>50~150kwh</td>
+									<td>23,000,000</td>
+								</tr>
+								<tr >
+									<td>전기밥솥</td>
+									<td>0~50kwh</td>
+									<td>1,000,000</td>
+								</tr>
+								<tr>
+									<td>세탁기</td>
+									<td>50~150kwh</td>
+									<td>23,000,000</td>
+								</tr>
+								<tr class="bgA">
+									<td>세탁기</td>
+									<td>50~150kwh</td>
+									<td>23,000,000</td>
+								</tr>
+								</tbody>
+							</table><!-- //table -->
+						</div
+						><!-- //sectionArea -->
+
+					</div>
+					<div class="swiper-slide">
+
+						<div class="sectionArea">
+							<div class="modelArea_B">
+								<div class="arrayArea ">
+									<p class="txt mb9">사용기간 : 2016.09.21 ~ 2016.10.20</p>
+									<p class="txt txtXL strong">[일별 사용량]</p>
+								</div><!-- //arrayArea -->
+								<p class="lineCol mb15 mt15"></p>
+								<div class="arrayArea mb15">
+									<p class="txt txtL strong">일 평균 사용량 : 200kWh          요금 : 800원</p>
+								</div><!-- //arrayArea -->
+								<div class="arrayArea">
+									<div class="left">
+										<p class="txt mb5">최대 사용일자 (<span class="colorA">10.08</span>)</p>
+										<p class="txt txtL strong">250 kWh (<span class="colorA"><em class="iconUp"></em>25%</span>)</p>
+									</div>
+									<div class="right">
+										<p class="txt mb5">최소 사용일자(<span class="colorC">10.16</span>)</p>
+										<p class="txt txtL strong">170 kWh (<span class="colorC"><em class="iconDown"></em>15%</span>)</p>
+									</div>
+								</div><!-- //arrayArea -->
+							</div>
+						</div>
+						<!-- //sectionArea -->
+						<div class="sectionArea">
+							<div class="chartArea">
+								<div id="chartC" style="width:100%; height:200px;"></div>
+							</div>
+						</div>
+						<!-- //sectionArea -->
+
+					</div>
+					<div class="swiper-slide">
+
+						<div class="sectionArea">
+							<div class="modelArea_B">
+								<div class="arrayArea ">
+									<p class="txt mb9">사용기간 : 2016.09.21 ~ 2016.10.20</p>
+									<p class="txt txtXL strong">[요일별 평균 사용량]</p>
+								</div><!-- //arrayArea -->
+								<p class="lineCol mb15 mt15"></p>
+								<div class="arrayArea mb15">
+									<p class="txt txtL strong">일 평균 사용량 : 200kWh          요금 : 800원</p>
+								</div><!-- //arrayArea -->
+								<div class="arrayArea">
+									<div class="left">
+										<p class="txt mb5">최대 사용요일 (<span class="colorA">일요일</span>)</p>
+										<p class="txt txtL strong">250 kWh (<span class="colorA"><em class="iconUp"></em>25%</span>)</p>
+									</div>
+									<div class="right">
+										<p class="txt mb5">최소 사용요일(<span class="colorC">수요일</span>)</p>
+										<p class="txt txtL strong">170 kWh (<span class="colorC"><em class="iconDown"></em>15%</span>)</p>
+									</div>
+								</div><!-- //arrayArea -->
+							</div>
+						</div>
+						<!-- //sectionArea -->
+						<div class="sectionArea">
+							<div class="chartArea">
+								<div id="chartD" style="width:100%; height:200px;"></div>
+							</div>
+						</div>
+						<!-- //sectionArea -->
+
+					</div>
+				</div>
+				<!-- Add Pagination -->
+				<div class="swiper-pagination"></div>
+				<!-- Add Arrows -->
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+			</div>
+		</div>
+		<!-- //pageSlider -->
+
+
+		<!-- //컨텐츠영역 -->
+		</div>
+<?php include_once $_SERVER["DOCUMENT_ROOT"]."/hems/include/footer.php" ; ?>

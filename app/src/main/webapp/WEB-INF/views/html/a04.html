@@ -1,0 +1,182 @@
+<?php include_once $_SERVER["DOCUMENT_ROOT"]."/hems/include/header.php" ; ?>
+<script type="text/javascript">
+$(function () {
+
+	//기기별 전력 사용량
+    Highcharts.chart('chartA', {
+		chart: {
+			backgroundColor: 'none',
+			type: 'pie'
+		},
+        title: {
+            text: ''
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false,
+						style: {
+							color: 'red'
+						}
+                    },
+                    showInLegend: true
+                }
+            },
+        series: [{
+            name: 'Brands',
+            colorByPoint: true,
+            data: [{
+                name: '컴퓨터',
+                y: 56.33
+            }, {
+                name: '상시전기',
+                y: 24.03,
+                sliced: true,
+                selected: true
+            }, {
+                name: 'TV',
+                y: 10.38
+            }, {
+                name: '전기밥솥',
+                y: 4.77
+            }, {
+                name: '냉장고',
+                y: 0.91
+            }, {
+                name: '세탁기',
+                y: 0.2
+            }]
+        }]
+    });
+
+
+
+
+});
+</script>
+<style type="text/css">
+
+
+</style>
+		<div class="contents sub">
+		<!-- 컨텐츠영역 -->
+
+
+		<div class="topTxtBa">전력 사용 통계</div>
+		<div class="tabArea" style="height:350px">
+			<ul class="tabs">
+				<li rel="tab2">2016년 09월</li>
+				<li rel="tab1" class="active">2016년 10월 10일</li>
+				<li rel="tab3">2016년 11월</li>
+			</ul>
+			<div class="tab_container">
+				<div id="tab2" class="tab_content">
+					a
+				</div>
+				<!-- #tab2 -->
+				<div id="tab1" class="tab_content" style="display:block;">
+
+					<div class="sectionArea">
+						<p class="title">기기별 사용량</p>
+						<div class="chartArea">
+							<div id="chartA" style="width:100%; height:280px; "></div>
+						</div>
+					</div>
+					<!-- //sectionArea -->
+
+				</div>
+				<!-- #tab1 -->
+				<div id="tab3" class="tab_content">
+					3
+				</div>
+				<!-- #tab3 -->
+			</div>
+			<!-- tab_container -->
+		</div>
+		<!-- //tabArea -->
+
+		<div class="pageSlider">
+			<div class="sectionArea">
+				<table class="table">
+					<thead>
+					<tr>
+						<th>단계</th>
+						<th>사용량</th>
+						<th>세대주</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>전기밥솥</td>
+						<td>0~50kwh</td>
+						<td>1,000,000</td>
+					</tr>
+					<tr>
+						<td>세탁기</td>
+						<td>50~150kwh</td>
+						<td>23,000,000</td>
+					</tr>
+					<tr class="fcolorA">
+						<td>전기밥솥</td>
+						<td>0~50kwh</td>
+						<td>1,000,000</td>
+					</tr>
+					<tr>
+						<td>세탁기</td>
+						<td>50~150kwh</td>
+						<td>23,000,000</td>
+					</tr>
+					<tr>
+						<td>세탁기</td>
+						<td>50~150kwh</td>
+						<td>23,000,000</td>
+					</tr>
+					</tbody>
+				</table>
+				<!-- //table -->
+			</div>
+			<!-- //sectionArea -->
+			<div class="sectionArea ">
+				<div class="modelArea_B ">
+					<div class="arrayArea ">
+						<div class="left">
+							<p class="txt">최대 전력 소비 기기는 </p>
+							<p class="txt txtL"><span class="colorA">냉장고(25%)<em class="iconUp"></em></span> </p>
+						</div>
+						<div class="right">
+							<p class="txt">최소 전력 소비 기기는</p>
+							<p class="txt txtL"><span class="colorC">TV(10%)<em class="iconDown"></em></span> </p>
+						</div>
+					</div>
+					<!-- //arrayArea -->
+					<p class="lineCol"></p>
+					<div class="arrayArea ">
+						<div class="left">
+							<p class="txt">최대 전력 소비 시간대는</p>
+							<p class="txt txtL"><span class="colorA">일요일 18시<em class="iconUp"></em></span>
+						</div>
+						<div class="right">
+							<p class="txt">최소 전력 소비 시간대는</p>
+							<p class="txt txtL"><span class="colorC">수요일 09시<em class="iconDown"></em></span>
+						</div>
+					</div>
+					<!-- //arrayArea -->
+
+				</div>
+				<!-- //modelArea_B -->
+			</div>
+			<!-- //sectionArea -->
+			<a class="btn_linkA05" href="a05.html">냉장고 소비 시간 단축 시 절감효과 보기</a>
+
+		</div>
+		<!-- //pageSlider -->
+
+
+		<!-- //컨텐츠영역 -->
+		</div>
+<?php include_once $_SERVER["DOCUMENT_ROOT"]."/hems/include/footer.php" ; ?>
